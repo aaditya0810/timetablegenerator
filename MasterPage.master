@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>Time Table Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/design.css">
+  
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    <style>
+    .lab
+    {
+        font-size:large;
+        font-family:Californian FB;
+        padding-left:100px;
+        
+    }
+    .tx {
+  padding: 10px;
+  border: none;
+  border-bottom: solid 1px #c9c9c9;
+  transition: border 0.3s;
+  width:100%
+}
+.text:focus,
+.text.focus {
+  border-bottom: solid 1px #969696;
+  width:100%
+}
+.btn {
+  background: #0a9afa;
+  background-image: -webkit-linear-gradient(top, #0a9afa, #166799);
+  background-image: -moz-linear-gradient(top, #0a9afa, #166799);
+  background-image: -ms-linear-gradient(top, #0a9afa, #166799);
+  background-image: -o-linear-gradient(top, #0a9afa, #166799);
+  background-image: linear-gradient(to bottom, #0a9afa, #166799);
+  -webkit-border-radius: 6;
+  -moz-border-radius: 6;
+  border-radius: 6px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 24px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+.tabhea
+{
+   background:#283442;
+   font-family:@Yu Gothic UI Semibold;
+   padding-left:20px;
+   color:White;
+    
+}
+
+.th {
+    background-color: #f2f2f2;
+}
+    
+    </style>
+    </asp:ContentPlaceHolder>
+  </head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <form id="Form1"  runat="server">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      &nbsp;</div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="AddTeacher.aspx">Add  Teacher Details</a></li>
+           <li><a href="Lab_Details.aspx">Add  Lab Details</a></li>
+               <li><a href="CourseDetails.aspx">Add  Course Details</a></li>
+                  <li><a href="CreateTT.aspx">Time Table</a></li>
+                           <li><a href="Delete-Course-Details.aspx">Delete Course Details</a></li>
+		    <li><a href="HomePage.aspx">Logout</a></li>
+      </ul>
+    </div>
+  
+  </div>
+  </nav>
+
+<div class="jumbotron text-center">
+   <center> <asp:Image ID="Image1" runat="server" ImageUrl="~/timetable.jpg" /></center>
+  <!--<p>Happy to help!!</p>-->
+</div>
+
+
+    
+
+    <div id="Visitor">
+    <table width="100%">
+    <tr><td>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </td></tr>
+    </table>
+    </div>
+
+
+
+        
+
+   <div id="div1" style="text-align:right;background:#283442;color:White;padding-right:50px">
+   Time Table Generator
+     
+      </div>
+    </form>
+</body>
+</html>
